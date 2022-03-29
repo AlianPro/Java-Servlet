@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TarefaDao {
     public static void addTask(Tarefa tarefa){
-        String sql = "INSERT INTO `prova_remsoft`.`tarefa` (`descricao`, `dt_criacao`) VALUES (?, ?)";
+        String sql = "INSERT INTO `prova`.`tarefa` (`descricao`, `dt_criacao`) VALUES (?, ?)";
         Connection conn = ConexaoFactory.getConexao();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -24,7 +24,7 @@ public class TarefaDao {
         }
     }
     public static void deleteTask(int idTask){
-        String sql = "UPDATE `prova_remsoft`.`tarefa` SET `excluido` = '1' WHERE (`id` = ?)";
+        String sql = "UPDATE `prova`.`tarefa` SET `excluido` = '1' WHERE (`id` = ?)";
         Connection conn = ConexaoFactory.getConexao();
         try{
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -36,7 +36,7 @@ public class TarefaDao {
         }
     }
     public static void updateTask(Tarefa tarefa){
-        String sql = "UPDATE `prova_remsoft`.`tarefa` SET `descricao` = ?, `dt_ult_alt` = ? WHERE (`id` = ?)";
+        String sql = "UPDATE `prova`.`tarefa` SET `descricao` = ?, `dt_ult_alt` = ? WHERE (`id` = ?)";
         Connection conn = ConexaoFactory.getConexao();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class TarefaDao {
         }
     }
     public static void finishTask(int idTask){
-        String sql = "UPDATE `prova_remsoft`.`tarefa` SET `finalizado` = '1', `dt_finalizado` = ? WHERE (`id` = ?)";
+        String sql = "UPDATE `prova`.`tarefa` SET `finalizado` = '1', `dt_finalizado` = ? WHERE (`id` = ?)";
         Connection conn = ConexaoFactory.getConexao();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
